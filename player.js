@@ -31,10 +31,10 @@ export const player = (() => {
     LoadModel_() {
       const loader = new FBXLoader();
       loader.setPath('./resources/Dinosaurs/FBX/');
-      loader.load('Trex.fbx', (fbx) => {
-        fbx.scale.setScalar(0.0025);
+      loader.load('benz.fbx', (fbx) => {
+        fbx.scale.setScalar(0.006);
         fbx.quaternion.setFromAxisAngle(
-            new THREE.Vector3(0, 1, 0), Math.PI / 2);
+            new THREE.Vector3(-0.7, 2, 1.6), Math.PI / 3.6);
 
         this.mesh_ = fbx;
         this.params_.scene.add(this.mesh_);
@@ -47,7 +47,7 @@ export const player = (() => {
   
           for (let m of materials) {
             if (m) {
-              m.specular = new THREE.Color(0x000000);
+              m.specular = new THREE.Color('red');
               m.color.offsetHSL(0, 0, 0.25);
             }
           }    
